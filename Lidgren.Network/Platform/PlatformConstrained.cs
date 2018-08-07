@@ -34,7 +34,7 @@ namespace Lidgren.Network
 				{
 					return null;
 				}
-				return IPAddress.Parse(UnityEngine.Network.player.externalIP);
+				return IPAddress.Parse(new System.Net.WebClient().DownloadString("https://api.ipify.org"));
 			}
 			catch // Catch Access Denied errors
 			{
